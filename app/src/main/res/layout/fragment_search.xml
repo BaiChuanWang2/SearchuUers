@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.example.searchusers.viewmodel.SearchViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue_2">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lineV005"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lineV095"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/ev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/lineV005"
+            app:layout_constraintEnd_toEndOf="@id/lineV095"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constrainedWidth="true"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:background="@drawable/bg_rectangle_gray"
+            android:imeOptions="actionSearch"
+            android:inputType="textNoSuggestions"
+            android:textColorHint="@color/gray"
+            android:text="@={viewModel.displaySearchText}"
+            android:hint="@string/search_hint"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:paddingStart="8dp"
+            android:paddingEnd="30dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClear"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_clear_24"
+            android:tint="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/lineV095"
+            app:layout_constraintTop_toTopOf="@id/ev"
+            app:layout_constraintBottom_toBottomOf="@id/ev"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{() -> viewModel.onClick(ivClear)}"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="@id/lineV005"
+            app:layout_constraintEnd_toEndOf="@id/lineV095"
+            app:layout_constraintTop_toBottomOf="@id/ev"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constrainedWidth="true"
+            app:layout_constrainedHeight="true"
+            android:layout_marginTop="14dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEmpty"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_search_24"
+            android:tint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivEmpty"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:text="@string/find_not_result"/>
+
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

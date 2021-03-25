@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SearchUsers</string>
+
+    <string name="search_hint">輸入用戶帳號</string>
+    <string name="find_not_result">無搜尋結果</string>
+    <string name="retry">重試</string>
+</resources>
