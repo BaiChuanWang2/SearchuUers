@@ -14,5 +14,5 @@
   * Paging 3
 # Demo
 <p>  
-  <code><img width="50%" src="https://github.com/BaiChuanWang2/SearchuUers/blob/main/demo.png"></code>
+  <code><img width="50%" src="https://github.com/BaiChuanWang2/SearchuUers/blob/main/demo.jpg"></code>
 </p>
