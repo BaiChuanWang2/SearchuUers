@@ -8,7 +8,6 @@
   * LiveData
   * Koin
   * Retrofit
-  * RxJava
   * Navigation
   * Glide
   * Paging 3
